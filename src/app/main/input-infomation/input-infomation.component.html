@@ -1,0 +1,35 @@
+<div class="center">
+ <table border="1">
+    <caption>会員登録情報</caption>
+    <p class="text-red" *ngIf="errorFlg">入力情報が不正です</p>
+    <tbody>
+      <tr>
+        <th class="table-size">ふりがな</th>
+        <td class="table-size">
+          <input type="text" name="hurigana" placeholder="例) もりかわだいち" [class.error]="error.huriganaError && hurigana === undefined"
+          (change)="changeHurigana($event.target.value)">
+          <div *ngIf="error.huriganaError && hurigana === undefined">ひらがなで入力してください</div>
+        </td>
+      </tr>
+      <tr>
+        <th class="table-size">名前</th>
+        <td class="table-size">
+          <input type="text" name="name" placeholder="例) 森川大地" [class.error]="error.nameError && name === undefined"
+          (change)="changeName($event.target.value)">
+          <div *ngIf="error.nameError && name === undefined">漢字かひらがなで入力してください</div>
+        </td>
+      </tr>
+      <tr>
+        <th class="table-size">パスワード</th>
+        <td class="table-size">
+          <input type="password" name="password" [class.error]="error.passwordError && password === undefined"
+          (change)="changePassword($event.target.value)">
+          <div *ngIf="error.passwordError && password === undefined"></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="confirm()">確認ボタン</button>
+</div>
+
+

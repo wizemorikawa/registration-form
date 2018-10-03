@@ -1,0 +1,16 @@
+node_modules
+.DS_Store
+*.map
+src/*.js
+src/*.js.map
+src/**/*.js
+src/**/*.js.map
+server/*/*.js
+server/*/*.js.map
+server/**/*.js
+server/**/*.js.map
+shared/**/*.js
+shared/**/*.js.map
+dist
+npm-debug.*
+logs/*

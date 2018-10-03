@@ -1,0 +1,12 @@
+<div style="text-align: center">
+  <div>
+   <app-currency-status [selectedPage]="selectedPage"></app-currency-status>
+  </div>
+  <app-input-infomation *ngIf="selectedPage === DISPLAY_PAGE.INPUT_INFOMATION"
+  (confirmUserInfo)="openConfirmPage($event)"></app-input-infomation>
+  <app-confirm-infomation *ngIf="selectedPage === DISPLAY_PAGE.COMFIRM"
+  [userInfo]="userInfo"
+  (onclickCompleteButton)="openCompletePage()"
+  (onclickBack)="openInputInfomationPage()"></app-confirm-infomation>
+  <app-complete-registration *ngIf="selectedPage === DISPLAY_PAGE.COMPLETE_MEMBER_JOIN "></app-complete-registration>
+</div>

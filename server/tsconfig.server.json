@@ -1,0 +1,12 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../dist/server",
+    "mapRoot": "../dist/server",
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  }
+}

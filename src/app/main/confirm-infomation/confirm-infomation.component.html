@@ -1,0 +1,24 @@
+<p>
+  入力情報確認画面
+</p>
+<div class="center">
+  <table border="1">
+    <caption>入力情報</caption>
+    <tbody>
+      <tr>
+        <th class="table-size">ふりがな</th>
+        <td class="table-size">{{userInfo.hurigana}}</td>
+      </tr>
+      <tr>
+        <th class="table-size">名前</th>
+        <td class="table-size">{{userInfo.name}}</td>
+      </tr>
+      <tr>
+        <th class="table-size">パスワード</th>
+        <td class="table-size">{{userInfo.password}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="complete()">確定</button>
+  <button (click)="backInputInfomation()">入力画面に戻る</button>
+</div>

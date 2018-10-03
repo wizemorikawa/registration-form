@@ -1,0 +1,7 @@
+.center {
+  display: inline-block;
+}
+.currentStatus {
+  color:white;
+  background-color: aqua;
+}
