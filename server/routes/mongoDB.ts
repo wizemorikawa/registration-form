@@ -1,32 +1,32 @@
-import * as express from 'express';
-import { RegiInfo } from '../models/mongoDBmodel';
+// import * as express from 'express';
+// import { RegiInfo } from '../models/mongoDBmodel';
 
-const router = express.Router();
-
-
-router.get('/', (req, res , next) => {
-  RegiInfo.find((err, doc) => {
-    if (err) {
-      return res.json(err);
-    }
-
-    return res.json(doc);
-  });
-});
+// const router = express.Router();
 
 
-router.post('/', (req, res) => {
-  const regiInfo = new RegiInfo({
-    regiInfo: req.body
-  });
+// router.get('/', (req, res , next) => {
+//   RegiInfo.find((err, doc) => {
+//     if (err) {
+//       return res.json(err);
+//     }
 
-  regiInfo.save((err, result) => {
-    if (err) {
-      return res.json(err);
-    }
-  });
-});
+//     return res.json(doc);
+//   });
+// });
 
 
-module.exports = router;
+// router.post('/', (req, res) => {
+//   const regiInfo = new RegiInfo({
+//     regiInfo: req.body
+//   });
+
+//   regiInfo.save((err, result) => {
+//     if (err) {
+//       return res.json(err);
+//     }
+//   });
+// });
+
+
+// module.exports = router;
 

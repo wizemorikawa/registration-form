@@ -28,13 +28,6 @@ export class InputInfomationComponent implements OnInit {
     this.http.get('api/character').toPromise().then((res) => {
       console.log(res);
     });
-
-    this.http.post('api/mongoDB', {message: 'あああ'}).toPromise().then((res) => {
-      console.log(res);
-      this.http.get('api/mongoDB').toPromise().then((res) => {
-        console.log(res);
-      });
-    });
   }
 
 

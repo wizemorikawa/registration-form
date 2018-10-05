@@ -14,3 +14,4 @@ shared/**/*.js.map
 dist
 npm-debug.*
 logs/*
+userData
