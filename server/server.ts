@@ -1,5 +1,6 @@
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
+import * as serveStatic from 'serve-static';
 
 const path = require('path');
 const app = express();
@@ -13,9 +14,17 @@ const server = app.listen(3000, function() {
 
 app.use(bodyParser.json());
 
+const URL_ROUTES = [
+  '/member',
+];
+
+URL_ROUTES.forEach(routerName => {
+  app.use(URL_ROUTES, serveStatic(path.join(__dirname, '/../public')));
+});
+
 const ROUTES = [
   'character',
-  'registration'
+  'registration',
 ];
 ROUTES.forEach(routerName => {
   console.log(routerName);

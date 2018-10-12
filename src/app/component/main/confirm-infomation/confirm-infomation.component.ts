@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { UserInfomation } from '../../model/userInfomation';
-import { HttpClient, HttpParams } from '../../../../node_modules/@angular/common/http';
-import { RegistrationServiceComponent } from '../../service/registration.service';
+import { UserInfomation } from '../../../model/userInfomation';
+import { HttpClient, HttpParams } from '../../../../../node_modules/@angular/common/http';
+import { RegistrationServiceComponent } from '../../../service/registration.service';
 
 @Component({
   selector: 'app-confirm-infomation',

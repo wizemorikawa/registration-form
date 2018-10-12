@@ -3,5 +3,16 @@
   <h1>
 {{ title }}
   </h1>
+  <ul style="display: inline-block">
+    <li>
+      <a routerLink="/registration" routerLinkActive="current"
+      [routerLinkActiveOptions]="{ exact: true }">会員登録画面</a>
+    </li>
+    <li>
+      <a routerLink="/member" routerLinkActive="current">会員確認画面</a>
+    </li>
+  </ul>
 </div>
-<app-main></app-main>
+<hr>
+<router-outlet></router-outlet>
+<!-- <app-main></app-main> -->

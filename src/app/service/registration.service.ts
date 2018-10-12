@@ -25,4 +25,12 @@ export class RegistrationServiceComponent {
         });
     }
 
+    getUserInfomation() {
+
+        return this._http.get(this.API_URL).toPromise().then(res => {
+            console.log(res);
+            return res;
+        });
+    }
+
 }

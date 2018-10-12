@@ -1,0 +1,30 @@
+<div class="center">
+  <table>
+    <thead class="thead">
+      <tr class="thead-tr">
+        <th>
+        ふりがな
+        </th>
+        <th>
+            名前
+        </th>
+        <th>
+            パスワード
+        </th>
+    </tr>
+    </thead>
+      <tbody class="tbody">
+        <tr class="tbody-tr" *ngFor="let member of members">
+          <td>
+              {{member.hurigana}}
+          </td>
+          <td>
+            {{member.name}}
+          </td>
+          <td>
+            {{member.password}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>

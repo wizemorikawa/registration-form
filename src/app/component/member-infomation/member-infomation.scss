@@ -1,0 +1,23 @@
+table {
+    display: inline-block;
+}
+
+tr {
+    padding: 3px;    
+}
+.thead .thead-tr {
+    background-color: burlywood;
+    td {
+        padding: 10px;
+    }
+}
+.tbody .tbody-tr {
+    background-color: black;
+    color: aliceblue;
+    td {
+        padding: 10px;
+    }
+}
+.center {
+    text-align: center;
+}

@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { UserInfomation } from '../../model/userInfomation';
+import { UserInfomation } from '../../../model/userInfomation';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
