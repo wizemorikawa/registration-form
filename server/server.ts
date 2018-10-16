@@ -15,7 +15,7 @@ const server = app.listen(3000, function() {
 app.use(bodyParser.json());
 
 const URL_ROUTES = [
-  '/member',
+  '/myApp(/[^/]+)?',
 ];
 
 URL_ROUTES.forEach(routerName => {
