@@ -1,4 +1,4 @@
-import { Component, OnInit } from '../../../../node_modules/@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '../../../../node_modules/@angular/core';
 import { RegistrationServiceComponent } from '../../service/registration.service';
 import { UserInfomation } from '../../model/userInfomation';
 import { forEach } from '../../../../node_modules/@angular/router/src/utils/collection';
@@ -10,7 +10,10 @@ import { forEach } from '../../../../node_modules/@angular/router/src/utils/coll
 })
 export class MemberInfomationComponent implements OnInit {
 
-    constructor(private _registrationService: RegistrationServiceComponent) {
+    constructor(
+        private _registrationService: RegistrationServiceComponent,
+        private _cdRef: ChangeDetectorRef
+    ) {
 
     }
 
@@ -19,6 +22,7 @@ export class MemberInfomationComponent implements OnInit {
     ngOnInit(): void {
         this._registrationService.getUserInfomation().then(res => {
             this.setUser(res);
+            this._cdRef.detectChanges();
         });
     }
 

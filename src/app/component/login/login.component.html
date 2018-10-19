@@ -1,0 +1,19 @@
+<div>
+  <h1>ログイン画面</h1>
+  <table>
+      <caption>ログイン情報</caption>
+      <tbody>
+          <tr>
+              <th>名前</th>
+              <td><input type="text" [(ngModel)]="name"></td>
+          </tr>
+          <tr>
+              <th>パスワード</th>
+              <td><input type="password" [(ngModel)]="password"></td>
+          </tr>
+      </tbody>
+      <tfoot>
+          <button (click)="login()">ログイン</button>
+      </tfoot>
+  </table>
+</div>

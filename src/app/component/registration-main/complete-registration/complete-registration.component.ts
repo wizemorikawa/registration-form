@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-complete-registration',
   templateUrl: './complete-registration.component.html',
-  styleUrls: ['./complete-registration.component.css']
+  styleUrls: ['./complete-registration.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CompleteRegistrationComponent implements OnInit {
 

@@ -1,0 +1,41 @@
+<div style="text-align:center">
+    <div style="float: right;">
+        <button *ngIf="loginInfo.name === ''" (click)="moveLoginPanel()">ログイン</button>
+        <button *ngIf="loginInfo.name !== ''" (click)="logout()">ログアウト</button>
+        <p *ngIf="loginInfo.name === ''">ログインしていません</p>
+        <p *ngIf="loginInfo">{{loginInfo.name}}</p>
+    </div>
+    <h1>
+    {{ title }}
+    </h1>
+    <ul style="display: inline-block">
+        <li>
+        <a routerLink="/myApp/registration" routerLinkActive="current"
+        [routerLinkActiveOptions]="{ exact: true }">会員登録画面</a>
+        </li>
+        <li>
+        <a routerLink="/myApp/member" routerLinkActive="current">会員確認画面</a>
+        </li>
+        <!-- <li>
+        <a routerLink="/404">エラー画面</a>  
+        </li> -->
+    </ul>
+</div>
+<hr>
+<div [ngSwitch]="currentUrl(_location.path())">
+    <div *ngSwitchDefault>
+        <app-main></app-main>
+    </div>
+    <div *ngSwitchCase="'registration'">
+        <app-main></app-main>
+    </div>
+    <div *ngSwitchCase="'member'">
+        <app-member-infomation></app-member-infomation>
+    </div>
+</div>
+<!-- 
+<app-main *ngIf="currentPath === 'registration'">
+</app-main>
+
+<app-member-infomation *ngIf="currentPath === 'member'"></app-member-infomation> -->
+

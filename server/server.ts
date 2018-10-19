@@ -19,12 +19,14 @@ const URL_ROUTES = [
 ];
 
 URL_ROUTES.forEach(routerName => {
-  app.use(URL_ROUTES, serveStatic(path.join(__dirname, '/../public')));
+  app.use(routerName, serveStatic(path.join(__dirname, '/../public')));
 });
 
 const ROUTES = [
   'character',
   'registration',
+  'login',
+  'logout'
 ];
 ROUTES.forEach(routerName => {
   console.log(routerName);

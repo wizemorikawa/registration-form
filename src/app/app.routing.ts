@@ -1,21 +1,19 @@
-import { MainComponent } from './component/main/main.component';
-import { MemberInfomationComponent } from './component/member-infomation/member-infomation';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import { promise } from '../../node_modules/protractor';
-import { MyAppRoutingModule } from './routing/myApp/myApp.routing.module';
+import { LoginComponent } from './component/login/login.component';
 
 // const myRoutes = [
 //     {path: 'registration', component: MainComponent},
 //     {path: 'member', component: MemberInfomationComponent}
 //   ];
 
-function loadMyApp() {
-  return Promise.resolve(require('./routing/myApp/myApp.routing.module')['MyAppRoutingModule']);
-}
+// function loadMyApp() {
+//   return Promise.resolve(require('./routing/myApp/myApp.routing.module')['MyAppRoutingModule']);
+// }
 
 const myRoutes: Routes = [
-  {path: 'myApp', loadChildren: require('./routing/myApp/myApp.routing.module') }
+  {path: 'myApp', loadChildren: './routing/myApp/myApp.routing.module#MyAppRoutingModule'},
+  {path: 'login', component: LoginComponent}
 ];
 
 // export const MY_ROUTES: ModuleWithProviders = RouterModule.forRoot(myRoutes);

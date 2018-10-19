@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { UserInfomation } from '../../../model/userInfomation';
 import { HttpClient, HttpParams } from '../../../../../node_modules/@angular/common/http';
 import { RegistrationServiceComponent } from '../../../service/registration.service';
@@ -6,7 +6,8 @@ import { RegistrationServiceComponent } from '../../../service/registration.serv
 @Component({
   selector: 'app-confirm-infomation',
   templateUrl: './confirm-infomation.component.html',
-  styleUrls: ['./confirm-infomation.component.css']
+  styleUrls: ['./confirm-infomation.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ConfirmInfomationComponent implements OnInit {
 

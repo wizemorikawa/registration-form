@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
 })
 export class MyAppComponent {
 
+  title = '会員登録';
+
 }

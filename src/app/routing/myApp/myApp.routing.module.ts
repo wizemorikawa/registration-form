@@ -1,14 +1,16 @@
-import { MainComponent } from '../../component/main/main.component';
-import { MemberInfomationComponent } from '../../component/member-infomation/member-infomation';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AppComponent } from '../../app.component';
-import { MyAppComponent } from './myApp.component';
+import { RegistrationComponent } from '../../component/registration/registration.component';
+import { AuthGuard } from '../../service/authGuard';
+import { LoginComponent } from '../../component/login/login.component';
 
 const myRoutes = [
-    {path: '', component: MyAppComponent},
-    {path: 'registration', component: MainComponent},
-    {path: 'member', component: MemberInfomationComponent}
+    {path: '', component: RegistrationComponent},
+    {path: 'member', component: RegistrationComponent, canActivate: [AuthGuard]},
+    {path: 'login', component: LoginComponent},
+    {path: ':routerParam', component: RegistrationComponent},
+    // {path: 'registration', component: MainComponent},
+    // {path: 'member', component: MemberInfomationComponent}
   ];
 
   @NgModule({
