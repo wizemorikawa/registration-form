@@ -1,25 +1,35 @@
 <div style="text-align:center">
-    <div style="float: right;">
-        <button *ngIf="loginInfo.name === ''" (click)="moveLoginPanel()">ログイン</button>
-        <button *ngIf="loginInfo.name !== ''" (click)="logout()">ログアウト</button>
-        <p *ngIf="loginInfo.name === ''">ログインしていません</p>
-        <p *ngIf="loginInfo">{{loginInfo.name}}</p>
+    <div style="width: 100%; height: 40px; background-color:black;color: white">    
+            <div style="float: left; font-size: 20px">
+                {{ title }}
+            </div>
+        <div *ngIf="loginInfo.name === ''" style="float: right;">
+            <span *ngIf="loginInfo.name === ''">ログインしていません</span>
+            <button *ngIf="loginInfo.name === ''" (click)="moveLoginPanel()">ログイン</button>
+        </div>
+        <div *ngIf="loginInfo.name !== ''" style="float: right">
+            <span *ngIf="loginInfo">{{loginInfo.name}}</span>
+            <button *ngIf="loginInfo.name !== ''" (click)="logout()">ログアウト</button>
+        </div>
     </div>
-    <h1>
-    {{ title }}
-    </h1>
-    <ul style="display: inline-block">
-        <li>
-        <a routerLink="/myApp/registration" routerLinkActive="current"
-        [routerLinkActiveOptions]="{ exact: true }">会員登録画面</a>
-        </li>
-        <li>
-        <a routerLink="/myApp/member" routerLinkActive="current">会員確認画面</a>
-        </li>
-        <!-- <li>
-        <a routerLink="/404">エラー画面</a>  
-        </li> -->
-    </ul>
+    <div>
+        <ul style="display: inline-block">
+            <li>
+            <a routerLink="/myApp/registration" routerLinkActive="current"
+            [routerLinkActiveOptions]="{ exact: true }">会員登録画面</a>
+            </li>
+            <li>
+            <a routerLink="/myApp/member" routerLinkActive="current">会員確認画面</a>
+            </li>
+            <li>
+            <a routerLink="/myApp/chart" routerLinkActive="current">チャート</a>
+            </li>
+
+            <!-- <li>
+            <a routerLink="/404">エラー画面</a>  
+            </li> -->
+        </ul>
+    </div>
 </div>
 <hr>
 <div [ngSwitch]="currentUrl(_location.path())">
@@ -32,6 +42,12 @@
     <div *ngSwitchCase="'member'">
         <app-member-infomation></app-member-infomation>
     </div>
+    <div *ngSwitchCase="'chart'">
+        <app-chart></app-chart>
+    </div>
+    <!-- <ng-template [ngSwitchCase]="'chart'">
+        <app-chart></app-chart>
+    </ng-template> -->
 </div>
 <!-- 
 <app-main *ngIf="currentPath === 'registration'">

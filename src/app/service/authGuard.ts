@@ -3,6 +3,7 @@ import { CanActivate, Router } from '../../../node_modules/@angular/router';
 import { BehaviorSubject } from '../../../node_modules/rxjs';
 import { UserInfomation } from '../model/userInfomation';
 import { HttpClient } from '../../../node_modules/@angular/common/http';
+import { UserService } from './user.service';
 
 @Injectable({
     providedIn: 'root',
@@ -15,12 +16,13 @@ export class AuthGuard implements CanActivate {
 
     constructor(
         private _http: HttpClient,
-        private route: Router
+        private route: Router,
+        private _userService: UserService
     ) {
     }
 
     async canActivate() {
-        const login: UserInfomation = await this.checkAsync();
+        const login: UserInfomation = await this._userService.isAuthricated();
         console.log(login);
         if ( login.name === '') {
             this.route.navigate(['myApp/login']);
@@ -32,17 +34,17 @@ export class AuthGuard implements CanActivate {
 
 
 
-    async checkAsync() {
-        const login: UserInfomation = await this._http.get(this.API_URL_LOGIN).toPromise()
-        .then(res => {
-            console.log(res);
-           return new UserInfomation(res);
-        });
-        console.log('login', login);
-        this.userSubject.next(login);
+    // async checkAsync() {
+    //     const login: UserInfomation = await this._http.get(this.API_URL_LOGIN).toPromise()
+    //     .then(res => {
+    //         console.log(res);
+    //        return new UserInfomation(res);
+    //     });
+    //     console.log('login', login);
+    //     this.userSubject.next(login);
 
-        return login;
-    }
+    //     return login;
+    // }
 
     getObservable() {
         return this.userSubject;

@@ -21,7 +21,8 @@ export class RegistrationComponent implements OnInit {
         public _location: Location,
         private _router: Router,
         private _auth: AuthGuard,
-        private _userService: UserService
+        private _userService: UserService,
+        private _cdRef: ChangeDetectorRef,
     ) {
         // _router.routeReuseStrategy.shouldReuseRoute = () => {
         //     return false;
@@ -29,6 +30,7 @@ export class RegistrationComponent implements OnInit {
         // _auth.getObservable().subscribe(loginInfo => {
         //     this.loginInfo = loginInfo;
         // });
+        console.log(this._userService.loginUser);
         this.loginInfo = this._userService.loginUser;
     }
 
@@ -53,5 +55,16 @@ export class RegistrationComponent implements OnInit {
 
     moveMemberPanel() {
         this._router.navigate(['myApp/member']);
+    }
+
+    moveLoginPanel() {
+        this._router.navigate(['myApp/login']);
+    }
+
+    logout() {
+        this._userService.logout().then(() => {
+            this.loginInfo = this._userService.loginUser;
+            this._cdRef.detectChanges();
+        });
     }
 }

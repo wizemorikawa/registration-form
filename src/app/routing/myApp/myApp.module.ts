@@ -14,6 +14,7 @@ import { Location } from '../../../../node_modules/@angular/common';
 import { RegistrationComponent } from '../../component/registration/registration.component';
 import { RouteReuseStrategy } from '../../../../node_modules/@angular/router';
 import { AuthGuard } from '../../service/authGuard';
+import { MultiLineChartComponent } from '../../component/chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { AuthGuard } from '../../service/authGuard';
     CurrencyStatusComponent,
     MemberInfomationComponent,
     RegistrationComponent,
+    MultiLineChartComponent,
   ],
   imports: [
     BrowserModule,
